@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/bgColor"
+    android:padding="18dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/calculate"
+        android:textColor="@color/textMain"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/age"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:background="@color/textMain"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/in_minutes"
+        android:textColor="@color/textMain"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/selectDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/btnBgColor"
+        android:text="@string/select_date"
+        android:textColor="@color/btnText"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/dateChosen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textColor="@color/btnBgColor"
+        android:textSize="20sp"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/selected_date"
+        android:textColor="@color/subText"
+        android:textSize="18sp"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/ageInMins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textColor="@color/btnBgColor"
+        android:textSize="28sp"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/age_in_minutes_from_date"
+        android:textColor="@color/subText"
+        android:textSize="18sp"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/btnText"
+        android:text="@string/reset"
+        android:translationY="180dp"
+        android:backgroundTint="@color/btnBgColor"/>
+
+</LinearLayout>
