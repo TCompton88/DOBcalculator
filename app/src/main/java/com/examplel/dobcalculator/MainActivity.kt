@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
-    fun clickedDate(){
+    private fun clickedDate(){
 
         val myCalendar = Calendar.getInstance()
         val year = myCalendar.get(Calendar.YEAR)
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         val day = myCalendar.get(Calendar.DAY_OF_MONTH)
 
         val dpd = DatePickerDialog(this,
-            { view, selectedYear, selectedMonth, dayOfMonth ->
+            { _, selectedYear, selectedMonth, dayOfMonth ->
                 val selectedDate = "${selectedMonth+1}/${dayOfMonth}/$selectedYear"
                 dateChosen?.text = selectedDate
 
@@ -53,15 +53,17 @@ class MainActivity : AppCompatActivity() {
                 )
 
                 val theDate = sdf.parse(selectedDate)
+                theDate?.let {
+                    val selectedDateInMins = theDate.time / 60000
 
-                val selectedDateInMins = theDate.time / 60000
+                    val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
+                    currentDate?.let {
+                        val currentDateInMins = currentDate.time / 60000
+                        val diffInMins = currentDateInMins - selectedDateInMins
 
-                val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
-                val currentDateInMins = currentDate.time / 60000
-
-                val diffInMins = currentDateInMins - selectedDateInMins
-
-                ageInMins?.text = "$diffInMins"
+                        ageInMins?.text = "$diffInMins"
+                    }
+                }
                 //Toast.makeText(this,"Date Picker Worked", Toast.LENGTH_LONG).show()
             },
             year, month, day)
